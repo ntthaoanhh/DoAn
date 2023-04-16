@@ -1,0 +1,24 @@
+package main;
+
+public class SachThamKhao extends SACH{
+private String LinhVuc;
+
+public SachThamKhao(String maSach, String tenSach, String tacGia, int namXuatBan, int soLanTaiBan, float giaTien,
+String linhVuc) {
+super(maSach, tenSach, tacGia, namXuatBan, soLanTaiBan, giaTien);
+LinhVuc = linhVuc;
+}
+
+public String getLinhVuc() {
+return LinhVuc;
+}
+
+public void setLinhVuc(String linhVuc) {
+LinhVuc = linhVuc;
+}
+
+@Override
+public String toString() {
+return super.toString()+"LinhVuc=" + LinhVuc ;
+}
+}
