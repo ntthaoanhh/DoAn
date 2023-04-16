@@ -1,0 +1,98 @@
+package main;
+
+import java.util.Objects;
+
+public class SACH implements Comparable<SACH>{
+private String MaSach;
+private String TenSach;
+private String TacGia;
+private int NamXuatBan;
+private int SoLanTaiBan;
+private float GiaTien;
+
+public SACH(String maSach, String tenSach, String tacGia, int namXuatBan, int soLanTaiBan, float giaTien) {
+MaSach = maSach;
+TenSach = tenSach;
+TacGia = tacGia;
+NamXuatBan = namXuatBan;
+SoLanTaiBan = soLanTaiBan;
+GiaTien= giaTien;
+}
+
+public float getGiaTien() {
+return GiaTien;
+}
+
+public void setGiaTien(float giaTien) {
+GiaTien = giaTien;
+}
+
+public String getMaSach() {
+return MaSach;
+}
+
+public void setMaSach(String maSach) {
+MaSach = maSach;
+}
+
+public String getTenSach() {
+return TenSach;
+}
+
+public void setTenSach(String tenSach) {
+TenSach = tenSach;
+}
+
+public String getTacGia() {
+return TacGia;
+}
+
+public void setTacGia(String tacGia) {
+TacGia = tacGia;
+}
+
+public int getNamXuatBan() {
+return NamXuatBan;
+}
+
+public void setNamXuatBan(int namXuatBan) {
+NamXuatBan = namXuatBan;
+}
+
+public int getSoLanTaiBan() {
+return SoLanTaiBan;
+}
+
+public void setSoLanTaiBan(int soLanTaiBan) {
+SoLanTaiBan = soLanTaiBan;
+}
+
+@Override
+public String toString() {
+return "MaSach=" + MaSach + ", TenSach=" + TenSach + ", TacGia=" + TacGia + ", NamXuatBan=" + NamXuatBan
++ ", SoLanTaiBan=" + SoLanTaiBan + ", GiaTien=" + GiaTien + ", ";
+}
+
+@Override
+public int compareTo(SACH o) {
+return this.MaSach.compareTo(o.MaSach);
+}
+
+@Override
+public int hashCode() {
+return Objects.hash(GiaTien, MaSach, NamXuatBan, SoLanTaiBan, TacGia, TenSach);
+}
+
+@Override
+public boolean equals(Object obj) {
+if (this == obj)
+return true;
+if (obj == null)
+return false;
+if (getClass() != obj.getClass())
+return false;
+SACH other = (SACH) obj;
+return Objects.equals(MaSach, other.MaSach);
+}
+
+}
