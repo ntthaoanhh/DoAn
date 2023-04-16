@@ -1,0 +1,23 @@
+package main;
+
+public class SachGiaoKhoa extends SACH{
+private int CapBac;
+public SachGiaoKhoa(String maSach, String tenSach, String tacGia, int namXuatBan, int soLanTaiBan, float giaTien,
+int capBac) {
+super(maSach, tenSach, tacGia, namXuatBan, soLanTaiBan, giaTien);
+CapBac = capBac;
+}
+
+public int getCapBac() {
+return CapBac;
+}
+public void setCapBac(int capBac) {
+CapBac = capBac;
+}
+
+@Override
+public String toString() {
+return super.toString()+"CapBac=" + CapBac ;
+}
+
+}
