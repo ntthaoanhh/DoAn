@@ -1,0 +1,78 @@
+package test;
+
+import java.util.Scanner;
+
+import main.KHOSACH;
+import main.SACH;
+
+public class test {
+public static void main(String[] args) {
+try (Scanner sc = new Scanner(System.in)) {
+KHOSACH ksh= new KHOSACH();
+int luaChon=0;
+do {
+System.out.println("----------MENU---------");
+System.out.println("Vui long chon chuc nang");
+System.out.println(
+"1. Them Sach vao kho sach.\n"
++"2. In kho Sach ra man hinh.\n"
++"3. Kiem tra kho sach co rong hay khong.\n"
++"4. Lay ra so luong sach trong kho sach.\n"
++"5. Lam rong kho sach.\n"
++"6. Xoa mot cuon Sach ra khoi kho sach.\n"
++"7. Tim kiem tat ca Sach dua tren ma sach.\n"
++"8. Sap xep giam dan theo gia tien.\n"
++"9. Sap xep tang dan theo gia tien.\n"
++"0. Thoat khoi chuong trinh.\n"
+);
+System.out.print("Nhap lua chon tu 0 - 9 : ");
+luaChon= sc.nextInt();
+//1. Thêm
+if(luaChon==1) {
+ksh.themSach();
+//2 In
+}else if(luaChon==2) {
+ksh.inKhoSach();
+System.out.println("Thao tac thanh cong !");
+//3 Kiểm tra rỗng
+}else if(luaChon==3) {
+System.out.println("Danh sach rong :"+ksh.kiemTraDanhSachRong());
+System.out.println("Kiem tra thanh cong !");
+//4 Lấy số lượng hiện tại
+}else if(luaChon==4) {
+System.out.println("So luong hien tai:"+ ksh.soLuongSach());
+System.out.println("Lay so luong thanh cong !");
+//5 Làm rỗng danh sách
+}else if(luaChon==5) {
+ksh.lamRongDanhSach();
+System.out.println("Lam rong thanh cong !");
+//6 Xóa một
+}else if(luaChon==6) {
+String maSach=sc.nextLine(); 
+System.out.print("Nhap ma sach :"); maSach=sc.nextLine();
+SACH sach = new SACH(maSach, maSach, maSach, luaChon, luaChon, luaChon);
+System.out.println("Xoa sach :"+ ksh.xoaSach());
+System.out.println("Xoa mot sach thanh cong !");
+//7 Tìm theo mã
+}else if(luaChon==7) {
+String tenSach = sc.nextLine();
+System.out.print("Nhap ma sach :"); tenSach =sc.nextLine();
+System.out.println("Ket qua tim kiem :");
+ksh.timSach(tenSach);
+System.out.println("Tim theo ma thanh cong !");
+//8 Sắp xếp giảm dần
+}else if(luaChon==8) {
+ksh.sapXepSachGiamDanTheoGiaTien();
+ksh.inKhoSach();
+System.out.println("Sap xep giam dan thanh cong !");
+}
+//9 Sắp xếp tăng dần
+else if(luaChon==9) {
+ksh.sapXepSachTangDanTheoGiaTien();
+ksh.inKhoSach();
+System.out.println("Sap xep tang dan thanh cong !");
+}
+}while(luaChon!=0);
+}
+}
+}
